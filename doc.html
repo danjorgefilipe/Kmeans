@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>LHZ related videos AI</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="SitePoint" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <style>
+        h1, h2 {
+            color: #FF6F00;
+        }
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body style="padding: 40px; padding-right: 10vw; padding-left: 10vw">
+    <h1>AI algorithm for related videos</h1>
+    <br />
+    <h2>Project Main Objective</h2>
+    <p>
+        The main objective of the project is, that given a user ID, you get in
+        return a number of personalised videos for that specific user.
+    </p>
+    <br />
+    <h2>Architecture</h2>
+    <p>
+        The main language used in this project is going to be python, for its ease
+        of use and avaiable tools to work with AI.
+    </p>
+    <p>Besides this, we will be using Flask, Sql-lite, and Sklearn.</p>
+
+    <br />
+    <h3>-- Flask</h3>
+    <p>
+        Flask is a “microframework” for Python, and is an excellent choice for
+        building smaller applications, APIs, and web services.
+    </p>
+    <br />
+    <h3>-- sklearn</h3>
+    <p>Scikit-learn is a free software machine learning library for
+        the Python programming language. It features various classification, regression and clustering algorithms
+        and is designed to
+        interoperate with the Python numerical and scientific libraries NumPy and SciPy.</p>
+    <p>We will be using Kmeans as the clustering algorithm from sklearn, because it is faster than KNN ( closest Nearest
+        Neibor ) in production.</p>
+    <br>
+
+    <br />
+    <h2>Algorithm</h2>
+    <ol>
+        <li>Input -- get the user id ( the input of the algorithm)</li>
+        <li>get the user video history and store it</li>
+        <br>
+        <table>
+        <tr>
+            <th>UserName</th>
+            <th>'Leadership' in %</th>
+            <th>'Presentations Skills' in %</th>
+            <th>...</th>
+            <th>'Sales' in %</th>
+          </tr>
+          <tr>
+            <td>Nuno Rocha</td>
+            <td>5</td>
+            <td>5</td>
+            <td>...</td>
+            <td>90</td>
+          </tr>
+          <tr>
+            <td>Pedro Jesus</td>
+            <td>70</td>
+            <td>15</td>
+            <td>...</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Maria Joselina</td>
+            <td>60</td>
+            <td>0</td>
+            <td>...</td>
+            <td>40</td>
+          </tr>
+        </table>
+        <br>
+        <li>Run K-Means to see where the user is in the cluster as seen in image[1]</li>
+        <br>
+        <img src="./1.png" width="400" height="auto">
+        <p style="font-size: 10px; color:grey; margin-top: -20px;">[1] image of a cluster</p>
+        <br>
+        <li>get other videos also watched by users in that cluster</li>
+        <li>get other videos also watched by users in that cluster</li>
+        <li>// get the most recent, // get the most viewed</li>
+        <li>Get some random videos into the mix to break the loop and allow the user to also see different videos (
+            again, most recent and most viewed )</li>
+        <li>Output -- return a group of ~12 videos that are personalized for that specific user</li>
+    </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
